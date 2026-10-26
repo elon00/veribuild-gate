@@ -1,31 +1,21 @@
-﻿# veribuild-gate (}ticker) // PRODUCTION ARCHITECTURE BLUEPRINT
+# Veribuild Gate — verified scope and roadmap
 
-> **Canonical System ID**: QMOOSA-0875  
-> **Component Role**: TESTS  
-> **Institutional Reality Gate Compliance**: 100/100 VERIFIED  
+Canonical System ID: QMOOSA-0875
+Approved role: tests
+Batch: 175 — Deterministic Artifact Reproducibility Checker
 
----
+## Implemented (limited)
 
-## 1. High-Performance Multi-Chain Infrastructure
-- **QuickNode RPC Gateway**: High-throughput multi-chain node fabric (EVM, Solana, Base, Arbitrum).
-- **Endpoint Failover**: Automated WebSocket stream recovery with sub-50ms heartbeat latency.
+- Local Python streaming byte-for-byte comparison of two existing files.
+- Explicit success, mismatch and input-error exit codes.
+- Real subprocess integration tests with positive and adversarial negative inputs.
+- Python compilation, Rust compilation and Python CodeQL workflows.
 
-## 2. Invariant Reality Gates & Mathematical Engine
-- **Conway Automaton Engine**: 2D cellular automaton bitboard transition matrix (B3/S23) for deterministic state verification.
-- **X402 Bazaar Micropayments**: HTTP 402 sub-cent machine-to-machine streaming rail with EIP-712 non-reentrant ticket validation.
-- **Post-Quantum Cryptography (PQC)**: NIST FIPS 203 (ML-KEM) lattice encapsulation and FIPS 204 (ML-DSA) state signatures.
+## Not implemented / not independently accepted
 
-## 3. Autonomous AI & Cognitive Agent Framework
-- **Raven Recursive Self-Improvement (RSI)**: Continuous neural self-reflection and inference verification.
-- **REA (Reasoning & Execution Agent)**: Actor-model cognitive task dispatcher.
-- **Model Context Protocol (MCP)**: Native standardized tool calling and schema validation.
+- Deterministic or hermetic build orchestration; cross-platform reproducibility.
+- Trusted source-to-artifact provenance, signatures, SBOM verification or supply-chain attestations.
+- Multi-chain RPC, Conway automaton, x402 settlement, PQC, AI agents or tokenomics.
+- Security certification, independent penetration review, deployment readiness.
 
-## 4. Unlimited Dynamic Tokenomics & Fair-Launch AMM
-- Continuous polynomial liquidity curve: $$Price(S) = P_0 + k \cdot S^\alpha$$
-- Instant liquidity absorption with zero initial LP capital requirements.
-
-## 5. Security & Verification Harness
-- Automated Smoke Test (<30s runtime)
-- 10,000-cycle Invariant Regression Battery
-- Memory and Thread Sanitizers
-- GitHub Actions CodeQL Security Analysis CI
+The Rust binary is a truthful status diagnostic, not a protocol engine. CI execution is evidence for the limited comparator only. Keep deployment and production security gates closed.

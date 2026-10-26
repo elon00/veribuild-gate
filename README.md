@@ -1,31 +1,18 @@
-﻿# Veribuild Gate (ticker)
-> Autonomous Production-Grade Protocol
+# Veribuild Gate — local artifact comparison (partial implementation)
 
-[![CI/CD Pipeline](https://github.com/elon00/veribuild-gate/actions/workflows/ci-cd-pipeline.yml/badge.svg)](https://github.com/elon00/veribuild-gate/actions)
-[![Score](https://img.shields.io/badge/Reality%20Gates-100%2F100%20GENUINE%20GREEN-2ea44f?style=flat-square)](#reality-check-verification)
-[![NIST PQC](https://img.shields.io/badge/Security-NIST%20FIPS%20203%20%26%20204-blue?style=flat-square)](#security)
-[![Verified](https://img.shields.io/badge/Status-100%25%20Verified-gold?style=flat-square)](#pillars)
+Canonical QMOOSA-0875, Batch 175, role: tests. This repository contains a **local byte-for-byte comparator** for two existing artifacts, not a deterministic build system or a reproducible-build attestation.
 
----
+## Run
 
-## About Veribuild Gate
-**Veribuild Gate (\ticker)** is an autonomous, decentralized, post-quantum intelligence protocol engineered for production-grade operational efficiency and cryptographic trust.
+    python src/compare_artifacts.py path/to/reference.bin path/to/candidate.bin
+    python -m compileall -q src tests
+    python -m unittest discover -s tests -p 'reality_*.py' -v
+    cargo check --all-targets
 
----
+Exit codes: 0 means both readable artifacts are byte-identical; 1 means different bytes; 2 means an input read error. Missing arguments return a nonzero argparse status. Files are compared in bounded chunks without writing either input.
 
-## Running the Protocol Locally
+## Verification scope
 
-### 1. Execute Reality Check Harness (Python)
-``bash
-python tests/reality_check_harness.py
-``
+Tests invoke the **actual local comparator** with identical, mutated, truncated, empty and missing files. This does not prove independent deterministic builds, supply-chain integrity, trusted provenance, authenticated distribution, cryptographic certification, PQC, network connectivity, or production readiness. No RPC or blockchain deployment occurs.
 
-### 2. Run the High-Performance Rust State Engine
-``bash
-cargo run
-``
-
----
-
-## Reality Check Verification
-Veribuild Gate enforces strict pre-deployment verification: all invariants, cryptographic proofs, and micro-escrow contracts must achieve a **100/100 Genuine Green** rating before mainnet settlement.
+Status: IMPLEMENTATION_PARTIAL; SECURITY_APPROVED=NO; DEPLOYMENT_READY=NO. Do not infer production acceptance from CI green.
